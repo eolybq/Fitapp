@@ -1,0 +1,81 @@
+{%extends "base.html"%}
+
+
+{%block content%}
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="flash-message alert alert-{{ category }}">
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+
+<div class="sin">
+
+
+
+<div class="sin_block">
+
+<div class="sin_display">
+
+    <h1> Statistics for {{username}}: </h1>
+
+
+
+    {% if foods_total%}
+        <h3> Foods noted: {{foods_count}} </h3> <h3> Calories eaten: {{calories_total}} kcal </h3>
+        <h3> Protein eaten: {{protein_total}} g</h3> <h3> Fat eaten: {{fats_total}} g</h3>
+        <h3> Carbohydrates eaten: {{carbohydrates_total}} g </h3>
+
+    {% else %}
+
+    <h3> No data yet. </h3>
+
+
+    {%endif%}
+</div>
+
+
+<div class="tabulka_hall">
+  <h2> Ranking</h2>
+  <table id="tableHall" class="table table-dark">
+    <thead>
+      <tr>
+        <th id ="rank">Rank</th>
+        <th id="username">User</th>
+        <th>▲▼</th>
+        <th><a href="{{ url_for('hall_of_fame', sort_by='foods_count') }}">Foods sum</a></th>
+        <th><a href="{{ url_for('hall_of_fame', sort_by='calories_total') }}">Calories Total</a></th>
+        <th><a href="{{ url_for('hall_of_fame', sort_by='protein_total') }}">Protein total</a></th>
+        <th><a href="{{ url_for('hall_of_fame', sort_by='carbohydrates_total') }}">Carbs total</a></th>
+        <th><a href="{{ url_for('hall_of_fame', sort_by='fats_total') }}">Fats total</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user_total in users_totals_sorted %}
+        <tr>
+          <td>{{ user_total.rank }}</td>
+          <td>{{ user_total.username }}</td>
+          <td></td>
+          <td>{{ user_total.foods_count }}</td>
+          <td>{{ user_total.calories_total }}</td>
+          <td>{{ user_total.protein_total }}</td>
+          <td>{{ user_total.carbohydrates_total }}</td>
+          <td>{{ user_total.fats_total }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+</div>
+
+</div>
+
+</div>
+
+<script src="{{ url_for('static', filename='hall.js') }}"> </script>
+{% endblock %}

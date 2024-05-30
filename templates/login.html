@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="flash-message alert alert-{{ category }}">
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+<div class="loginContainer">
+
+    <div class="signUpBlock">
+            
+            <form class="signUp" method="POST" action="/login">
+                    <h2>Register to start your journey!</h2>
+                    <input type="hidden" name="action" value="signup">
+                
+                    <div class="input-group-prepend test5">
+                        <span class="input-group-text" id="basic-addon1">@</span>
+                    
+                
+                        <input type="email" name="username" class="signUpEmail form-control" placeholder="Username..." aria-label="Username" aria-describedby="basic-addon1">
+                        
+                        <input type="password" name="password" class="signUpPassword form-control" placeholder="Password...">
+                    
+                
+                        <button type="submit" class="btn btn-dark signSubmit">Sign up</button>
+                    </div>
+            
+                    <div class="alreadyHave">
+                        <a href="#" class="signInBtn btn btn-dark">Already have an account? Sign in here:</a>
+                    </div>
+    
+           </form>
+    </div>
+    
+    
+    
+    <div class="signInBlock">
+        
+        <form class="signIn" method="POST" action="/login">
+            <h2>Login to continue your journey!</h2>
+            <input type="hidden" name="action" value="signin">
+            
+                <div class="input-group-prepend test6">
+                    <span class="input-group-text" id="basic-addon1">@</span>
+
+
+            
+            
+                    <input type="email" name="username" class="signInEmail form-control" placeholder="Username..." aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="password" name="password" class="signInPassword form-control" placeholder="Password...">
+        
+                    <button type="submit" class="signSubmit btn btn-dark">Sign in</button>
+                </div>
+    
+
+                <div class="dontHave">
+                    <a href="#" class="signUpBtn btn btn-dark">Don't have an account? Sign up here:</a>
+                </div>
+        </form>
+    
+    </div>
+</div>
+    
+<script src="{{ url_for('static', filename='login.js') }}"></script>
+
+{% endblock %}

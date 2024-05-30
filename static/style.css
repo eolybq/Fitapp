@@ -1,0 +1,653 @@
+body {
+  background: linear-gradient(90deg, rgba(159,61,228,1) 10%, rgba(214,72,113,1) 77%);
+  }
+
+/* login page */
+
+.signUp {
+  display: none;
+}
+
+
+
+/*navbar*/
+
+nav ul {
+margin: 0;
+padding: 0;
+list-style: none;
+display: flex;
+gap: 70px;
+font-size: 25px;
+}
+
+header {
+  filter: brightness(0.7)
+}
+
+header, .navbar {
+width: 100%; 
+margin: 0; 
+padding: 10px; 
+background: rgb(90, 2, 152);
+background: linear-gradient(90deg, rgba(159,61,228,1) 10%, rgba(214,72,113,1) 77%);
+}
+
+
+.navbar-nav .nav-link {
+  position: relative; /* Umožní správné umístění pseudoelementu */
+}
+
+/* Styl pro podtržení */
+.navbar-nav .nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+background: rgb(255, 255, 255); /* Základní barva podtržení */
+bottom: -5px;
+left: 0;
+transition: width 0.3s ease; /* Plynulý přechod pro animaci */
+}
+
+/* Styl pro aktivní stav */
+.navbar-nav .nav-link.active::after {
+width: 100%;
+background: rgb(255, 255, 255); /* Barva podtržení pro aktivní stav */
+}
+
+#obrh1 {
+  margin-left: 2%;
+}
+
+
+sin {
+  display: grid;
+  place-items: center;
+}
+@keyframes borderFade {
+  from {
+    border-color: rgba(0, 0, 0, 0); /* Počáteční barva borderu */
+  }
+  to {
+    border-color: rgba(0, 0, 0); /* Cílová barva borderu */
+  }
+}
+.sin_block {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  margin-top: 50px;
+  border-color: rgba(0, 0, 0, 0);
+  border-width: 1px;
+  border-style: solid;
+  transition: background-color 0.5s ease;
+}
+
+.sin_display {
+  
+  border-radius: 20px;
+  margin-top: 50px;
+}
+
+
+.sin_block:hover{
+  background-color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0);
+  animation: borderFade 2s linear;
+}
+
+#tableHall {
+  border-radius: 20px ;
+  overflow: hidden;
+  margin-bottom: 0px;
+
+}
+
+.tabulka_hall {
+  margin-top: 50px;
+}
+
+
+#tableHall a {
+  color: #ffffff; 
+  text-decoration: none; 
+  transition: color 0.3s ease-in-out; 
+}
+
+#tableHall a:hover {
+  color:   rgba(214,72,113,1);
+  border-color: rgba(0, 0, 0);
+  animation: borderFade 2s linear;
+
+}
+
+.sin_display h1{
+  text-align: left;
+  padding-left: 50px;
+}
+
+.sin_display h3{
+  text-align: left;
+  padding-left: 50px;
+}
+
+.tabulka_hall h2 {
+  text-align: left;
+  padding-left: 50px;
+}
+
+.sin_display h1{
+  font-size: 40px;
+  text-decoration: underline 1px;
+}
+
+.container_act {
+  display: grid;
+  place-items: center;
+}
+
+.activity_form {
+  margin-top:50px;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: auto;
+  border-radius: 20px;
+  text-align: center;
+  overflow: hidden;
+  border-color: rgba(0, 0, 0, 0);
+  border-width: 1px;
+  border-style: solid;
+  transition: background-color 0.3s ease-in-out, transform 0.6s ease-in-out;
+}
+
+
+.activity_form:hover {
+  transform: scale(1.2);
+  background-color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0);
+  animation: borderFade 2s linear;
+}
+
+
+.activity_form h1 {
+  background-color: rgba(0, 0, 0, 0.2);
+  
+}
+
+#activityDisplay {
+  
+  border-radius: 20px;
+}
+
+
+.signInBlock {
+  margin-top: 0px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  text-align: center;
+  border-color: rgba(0, 0, 0, 0);
+  border-width: 1px;
+  border-style: solid;
+  transition: background-color 0.3s ease-in-out;
+  overflow: hidden;
+  
+ 
+}
+
+
+.signInBlock h2 {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+.signInBlock:hover {
+  border-color: rgba(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.2);
+  animation: borderFade 2s linear;
+
+}
+
+.test6 {
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.dontHave {
+  display: grid;
+  margin-top: 20px;
+}
+
+
+.signUpBtn{
+  background-color:rgba(0, 0, 0, 0.2) !important;
+  border-width:0;
+}
+.signUpBtn:hover {
+  background-color:rgba(0, 0, 0, 0.5) !important;
+}
+
+/* home page */
+
+.mycontainer {
+  display:flex;
+  grid-template-columns: 1fr 1fr ;
+  text-align:center;
+  min-height:1000px;
+}
+
+.mycontainer li {
+  list-style:none;
+  user-select: none;
+}
+
+.sidebarLeft {
+  background: rgb(36,213,242);
+  background: linear-gradient(90deg, rgba(36,213,242,0.4738270308123249) 34%, rgba(84,255,118,0.5690651260504201) 72%);
+  display: flex;
+  flex-direction: column;
+  
+  
+  
+}
+
+.sidebarRight {
+  background: rgb(84,255,118);
+  background: linear-gradient(90deg, rgba(84,255,118,0.5690651260504201) 34%, rgba(36,213,242,0.4738270308123249) 72%);
+
+}
+
+#todayBlock{
+  display: flex;
+  justify-content: center; /* Vodorovné centrování obsahu v divu */
+}
+
+
+
+#displayArea, #displayArea1, #displayAreaActivity {
+  padding: 0; 
+  width: 25%;
+}
+
+
+.foodToday {
+  font-size: 20px;
+  background-color: rgba(84,255,118);
+  margin-bottom: 15px;
+  border-radius: 10px;
+  transition: transform 0.35s ease-in-out;
+  overflow: hidden;
+}
+
+
+.foodToday:hover {
+  transform: scale(1.2);
+}
+
+
+.sidebarLeft, .sidebarRight {
+  flex: 1; /* Zajistí, že oba sidebary začnou se stejnou velikostí */
+  transition: flex-grow 0.7s ease;
+   /* Přechod pro plynulou změnu velikosti */
+   
+
+}
+
+.sidebarLeft:hover, .sidebarRight:hover {
+  flex-grow: 3; /* Zvětší sidebar, na který bylo najeto */
+}
+
+#todayBlock .foodToday:hover {
+  cursor: pointer;
+}
+
+@keyframes append-animate {
+  from {
+    max-height: 40px;
+    /* opacity: 0; */
+  }
+  to {
+    max-height: 1000px; /* Max. výška seznamu */
+    /* opacity: 1; */
+  }
+}
+
+
+.newFoodInfo {
+  animation: append-animate 1.5s linear;
+}
+
+
+.foodInfoSeznam {
+  background-color: rgb(36,213,242);
+  padding-left:0px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  
+} 
+
+
+
+.signInBlock, .signUpBlock {
+   transition: transform 0.6s ease-in-out; 
+} 
+
+.signInBlock:hover, .signUpBlock:hover {
+  transform: scale(1.2);
+}
+
+.signInBlock a , .signUpBlock a{
+  color: #ffffff; 
+  text-decoration: none; 
+  transition: color 0.3s ease-in-out; 
+}
+
+.signInBlock a:hover , .signUpBlock a:hover {
+  color:   rgba(214,72,113,1);
+  border-color: rgba(0, 0, 0);
+  animation: borderFade 2s linear;
+
+}
+
+
+.obrblok {
+  height: 100vh;
+  width: 100vw;
+}
+
+
+img {
+  width: 400px; 
+  height: 300px;
+  object-fit: cover;
+  transition:  0.6s ease-in-out; 
+}
+
+
+.obrblok img:hover {
+
+  transform: scale(1.05);
+}
+
+
+.obrgym , .obrfood{
+  row-gap: 14px;
+  display: grid; 
+  grid-template-columns: auto auto;
+}   
+
+
+.obrblok {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 60px;
+}
+
+.obrgymh {
+  margin-left: 8%
+}
+
+.obrfoodh {
+  margin-right: 2%;
+}
+
+
+#activityToday, #activityDate2, #foodDate{
+  display: flex;
+  justify-content: center; /* Vodorovné centrování obsahu v divu */
+}
+
+#activityDateInput, #nutriDateInput {
+  padding-bottom: 20px;
+}
+
+.activityToday , .activityDay{
+  background-color: rgb(8, 144, 185);
+  margin-bottom: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 20px;
+}
+
+
+.nutrientSum {
+  background-color: rgb(67, 230, 255);
+  border-radius: 10px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.nutrientSum:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+#dateBlock, #activityDate{
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  width:25%;
+  min-width: 150px;
+}
+
+@keyframes test62 {
+  from {
+      opacity: 0;
+  }
+
+  to {
+      opacity: 1;
+  }
+}
+
+.test59 {
+  animation: test62 0.6s;
+}
+
+.test59 {
+  display: flex;
+  justify-content: center;
+}
+
+.foodDateTest {
+  background-color: rgb(134, 255, 158);
+  margin-bottom: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.foodInfoSeznam {
+  font-size: 15px;
+}
+
+#dateChoiceActivity, #dateChoice {
+  margin-top:20px;
+}
+
+#dateChoiceActivity:hover, #dateChoice:hover {
+  cursor: pointer;
+}
+
+.sidebarLeft h2, .sidebarRight h2 {
+  font-size: 50px;
+}
+
+.nav-item a {
+  color: #000000!important;
+  transition: color 0.3s ease-in-out!important;
+}
+
+.nav-item a:hover{
+  color:   rgb(255, 255, 255)!important;
+}
+
+#foodDisplay h3 {
+  font-weight: bold;
+  font-size: 35px;
+}
+#foodDisplay p {
+  font-weight: bold;
+  font-size: 27px;
+}
+
+.activityDate2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+#displayAreaActivity1 {
+  width: 60%;
+  padding:0;
+}
+
+@keyframes display {
+  from {
+      opacity: 0;
+      transform: translateY(50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+
+#displayArea, #displayAreaActivity{
+
+  animation: display 0.5s;
+}
+
+@keyframes display2 {
+  from {
+      opacity: 0;
+      
+  }
+  to {
+      opacity: 1;
+      
+  }
+}
+
+
+#addFoodWhole, .container_act{
+  animation: display2 0.5s;
+}
+
+/* add food page */
+
+#addFoodWhole {
+  display:grid;
+  place-items:center;
+}
+
+#addFoodBlock {
+  margin-top:50px;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: auto;
+  border-radius: 20px;
+  text-align: center;
+  overflow: hidden;
+  border-color: rgba(0, 0, 0, 0);
+  border-width: 1px;
+  border-style: solid;
+  transition: background-color 0.3s ease-in-out, transform 0.6s ease-in-out;;
+}
+
+@keyframes borderFade {
+  from {
+    border-color: rgba(0, 0, 0, 0); /* Počáteční barva borderu */
+  }
+  to {
+    border-color: rgba(0, 0, 0); /* Cílová barva borderu */
+  }
+}
+
+#addFoodBlock:hover {
+  transform: scale(1.2);
+  background-color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0);
+  animation: borderFade 2s linear;
+}
+
+
+#addFoodBlock h1 {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#loadingAnimation img {
+  width:80px;
+  height: auto;
+}
+
+#foodDisplay p {
+  text-align: center;
+}
+
+.input-group {
+  gap:5px;
+}
+
+.btn-secondary {
+  background-color:rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary:hover {
+  background-color:rgba(0, 0, 0, 0.5);
+}
+
+/* login page */
+
+.signUpEmail, .signUpPassword {
+  width:35%;
+}
+
+.signInEmail, .signInPassword {
+  width:35%;
+}
+
+.loginContainer {
+  display:grid;
+  place-items:center;
+}
+
+.signUpBlock {
+  margin-top:50px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  text-align: center;
+  border-color: rgba(0, 0, 0, 0);
+  border-width: 1px;
+  border-style: solid;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.signUpBlock h2 {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.signUpBlock:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0);
+  animation: borderFade 2s linear;
+}
+
+.test5 {
+  justify-content: center;
+  margin-top:20px;
+}
+
+.alreadyHave {
+  display:grid;
+  margin-top:20px;
+}
+
+.signInBtn{
+  background-color:rgba(0, 0, 0, 0.2) !important;
+  border-width:0;
+}
+
+.signInBtn:hover {
+  background-color:rgba(0, 0, 0, 0.5) !important;
+}
+

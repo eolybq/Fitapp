@@ -1,0 +1,84 @@
+{%extends "base.html"%}
+
+
+{%block content%}
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="flash-message alert alert-{{ category }}">
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+<div class="mycontainer">
+    <div class="sidebarLeft">
+        
+        <div class="div1">
+            <h2>Nutrition</h2>
+            <div id="todayBlock">
+                <ul id="displayArea">
+            
+
+                </ul>
+                
+            </div>
+            <div class="test59">
+            <div id="dateBlock">
+                <div id="nutriDateInput">
+
+
+
+                    <input type ="date" id="dateChoice">
+                    
+
+
+                    
+                </div>
+
+                <div id="foodDate">
+
+                <ul id="displayArea1">
+                
+                
+
+                </ul>
+            </div>
+            </div>
+            </div>
+        </div>
+    </div> 
+
+    <div class="sidebarRight">
+    
+        <!-- Obsah bočního panelu -->
+            <h2>Activity</h2>
+            <div id="activityToday">
+                <ul id="displayAreaActivity">
+
+
+                </ul>
+            </div>
+            <div class="test59">
+            <div id="activityDate">
+                <div id="activityDateInput">
+                    <input type ="date" id="dateChoiceActivity">
+                
+                </div>
+                <div id="activityDate2">
+                    <ul id="displayAreaActivity1">
+            
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+
+
+<script src="{{ url_for('static', filename='user.js') }}"> </script>
+
+{%endblock%}

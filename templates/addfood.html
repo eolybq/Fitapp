@@ -1,0 +1,56 @@
+{% extends "base.html"%}
+
+
+{% block content %}
+
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="flash-message alert alert-{{ category }}">
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+
+
+
+
+
+
+
+
+<div id="addFoodWhole">
+    <div id="addFoodBlock">
+        <h1>Add food</h1>
+        <div class="input-group">
+            <input type="text" placeholder="Type your food here..." id="foodInput" class="form-control">
+            <input type="text" id = "weightInput" class="form-control" placeholder="Weight...">
+            <a href="#" class="btn btn-dark" id="submitFood" style="display: none;">Add food</a>
+            <a href="#" class="btn btn-secondary" id="weight5">50g</a>
+            <a href="#" class="btn btn-secondary" id="weight10">100g</a>
+            <a href="#" class="btn btn-secondary" id="weightPort">1 serving</a>
+            <a href="#" class="btn btn-secondary" id="weight20">200g</a>
+        </div>
+        <div id ="foodDisplay">
+            
+        </div>
+
+        <div id="loadingAnimation" style="display: none;">
+
+            <img src="/static/loading.gif" >
+
+        </div>
+
+        <div id="obrTest">
+
+        </div>
+    </div>
+</div>
+
+
+<script src="{{ url_for('static', filename='addfood.js') }}"> </script>
+
+{%endblock%}

@@ -1,0 +1,62 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="flash-message alert alert-{{ category }}">
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+
+<h1 id="obrh1">Our fitapp will change your life's map!</h1>
+
+
+
+
+
+<div class="obrblok">
+    
+
+    <div class="obrgymh">
+        <h2>Best way to track your strenght...</h2>
+        <div class="obrgym">
+            
+            
+            <img src="{{ url_for('static', filename='images/gym.jpg') }}" alt="Popis obrázku1">
+            <img src="{{ url_for('static', filename='images/workout.jpg') }}" alt="Popis obrázku2">
+            <img src="{{ url_for('static', filename='images/run.jpg') }}" alt="Popis obrázku3">
+            <img src="{{ url_for('static', filename='images/gym3.jpeg') }}" alt="Popis obrázku3">
+
+        </div>
+    </div>
+
+
+
+    <div class="obrfoodh">
+        <h2>And your nutrients!</h2>
+        <div class="obrfood">
+
+            <img src="{{ url_for('static', filename='images/food.jpg') }}" alt="Popis obrázku1">
+            <img src="{{ url_for('static', filename='images/food2.jpg') }}" alt="Popis obrázku2">
+            <img src="{{ url_for('static', filename='images/food3.png') }}" alt="Popis obrázku3">
+            <img src="{{ url_for('static', filename='images/food4.webp') }}" alt="Popis obrázku3">
+
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+{% endblock %}
