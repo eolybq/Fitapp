@@ -5,13 +5,18 @@ from sqlalchemy import Date, cast
 from datetime import timedelta
 import datetime
 from flask_cors import CORS
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__, static_folder='static')
 CORS(app)
-app.secret_key = "hello"
-app.config['SECRET_KEY'] = "secret_key"
+app.secret_key = os.getenv("app_secret_key")
+app.config['SECRET_KEY'] = os.getenv("secret_key")
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.permanent_session_lifetime = timedelta(minutes=1000)
+
 
 
 
@@ -212,7 +217,7 @@ def receive_data():
                 
                 if query != None:
                     api_url = 'https://api.api-ninjas.com/v1/nutrition?query={}'.format(query)
-                    response = requests.get(api_url, headers={'X-Api-Key': 'FQaci+ynPatuFRCh5oYQgQ==cAVWBbtpxIOQcReX'})
+                    response = requests.get(api_url, headers={'X-Api-Key': os.getenv("X_api_key")})
                     
                     if response.status_code == requests.codes.ok:
                         data = response.json()
@@ -247,7 +252,7 @@ def receive_data():
                     
                 if query != None:
                     api_url = 'https://api.api-ninjas.com/v1/nutrition?query={}'.format(query)
-                    response = requests.get(api_url, headers={'X-Api-Key': 'FQaci+ynPatuFRCh5oYQgQ==cAVWBbtpxIOQcReX'})
+                    response = requests.get(api_url, headers={'X-Api-Key': os.getenv("X_api_key")})
                     
                     if response.status_code == requests.codes.ok:
                         
@@ -561,7 +566,7 @@ def receive_data_act():
                 print(query)
                     
                 if query != None:
-                    access_key = "igI0JnlEtoM2o2tp5sX14_O58so39jdgu9fqviSjJjw"
+                    access_key = os.getenv("access_key")
                     api_url = f'https://api.unsplash.com/search/photos?page=1&query={query}'
                     response = requests.get(api_url, headers={'Authorization': f'Client-ID {access_key}'})
                     
@@ -599,7 +604,7 @@ def receive_data_obr():
             print(query)
                 
             if query != None:
-                access_key = "igI0JnlEtoM2o2tp5sX14_O58so39jdgu9fqviSjJjw"
+                access_key = os.getenv("access_key")
                 api_url = f'https://api.unsplash.com/search/photos?page=1&query={query}'
                 response = requests.get(api_url, headers={'Authorization': f'Client-ID {access_key}'})
                 
